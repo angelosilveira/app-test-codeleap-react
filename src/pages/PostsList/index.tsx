@@ -27,8 +27,6 @@ type FormData = {
   content: string;
 };
 
-type PostProps = Pick<Posts, 'id' | 'title' | 'content'>;
-
 const schema = yup.object({
   title: yup.string().required('Title is required'),
   content: yup.string().required('Content is required'),
@@ -50,7 +48,7 @@ export const PostsList = () => {
 
   const watchAllFields = watch();
 
-  const { posts, loading, error, post, loadingCreate } = useTypedSelector(
+  const { posts, loading, post, loadingCreate } = useTypedSelector(
     (state) => state.posts
   );
 
@@ -69,17 +67,19 @@ export const PostsList = () => {
     );
   });
 
-  const onDeletePost = async (post: PostProps) => {
+  const onDeletePost = async (post: Posts) => {
     setOpenModalDelete(true);
     await dispatch(selectedPost(post));
   };
 
   const confirmDeletePost = async () => {
-    await dispatch(deletePosts(post?.id));
-    setOpenModalDelete(false);
+    if (post) {
+      await dispatch(deletePosts(post?.id));
+      setOpenModalDelete(false);
+    }
   };
 
-  const onEditPost = async (post: PostProps) => {
+  const onEditPost = async (post: Posts) => {
     setOpenModalEditPost(true);
     await dispatch(selectedPost(post));
   };

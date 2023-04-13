@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "date_proposal": "2023-01-03",
+      "cnpj_cpf": "484.004.750-20",
+      "name": "DANIEL LEMES CORDEIRO",
+      "rg": "",
+      "marital": "solteiro",
+      "phone": "",
+      "date_birth": "",
+      "cel": "",
+      "sex": "masculino",
+      "email": "",
+      "state": "BA",
+      "city": "Acajutiba",
+      "neighborhood": "alto",
+      "address": "praça cel candido silveira santos",
+      "number": "",
+      "zipcode": "",
+      "complement": "",
+      "id": 1
+    }
+  ]
+}

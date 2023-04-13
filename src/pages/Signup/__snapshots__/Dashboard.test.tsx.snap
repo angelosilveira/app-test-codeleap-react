@@ -1,0 +1,36 @@
+// Vitest Snapshot v1
+
+exports[`<Dashboard /> > should render the dashboard with loading 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.c0 div {
+  position: absolute;
+  background: #6e17c8;
+  opacity: 1;
+  border-radius: 50%;
+  -webkit-animation: cwzpQT 1.4s cubic-bezier(0,0.2,0.8,1) infinite;
+  animation: cwzpQT 1.4s cubic-bezier(0,0.2,0.8,1) infinite;
+}
+
+.c0 div:nth-child(2) {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+
+<div
+  style="display: flex; justify-content: center; align-items: center; height: 100%;"
+>
+  <div
+    class="c0"
+    data-testid="loading"
+  >
+    <div />
+    <div />
+  </div>
+</div>
+`;

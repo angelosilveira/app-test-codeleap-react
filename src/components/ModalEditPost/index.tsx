@@ -58,13 +58,15 @@ export const ModalEditPost = ({ open, setOpen }: ModalEditPostProps) => {
   };
 
   const onSubmit = handleSubmit(async (data) => {
-    await dispatch(
-      updatePosts({
-        id: post?.id,
-        ...data,
-      })
-    );
-    setOpen(false);
+    if (post) {
+      await dispatch(
+        updatePosts({
+          id: post?.id,
+          ...data,
+        })
+      );
+      setOpen(false);
+    }
   });
 
   return (

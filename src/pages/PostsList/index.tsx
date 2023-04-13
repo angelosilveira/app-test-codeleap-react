@@ -69,9 +69,9 @@ export const PostsList = () => {
     );
   });
 
-  const onDeletePost = async (id: number) => {
+  const onDeletePost = async (post: PostProps) => {
     setOpenModalDelete(true);
-    await dispatch(selectedPost(id));
+    await dispatch(selectedPost(post));
   };
 
   const confirmDeletePost = async () => {
@@ -82,10 +82,6 @@ export const PostsList = () => {
   const onEditPost = async (post: PostProps) => {
     setOpenModalEditPost(true);
     await dispatch(selectedPost(post));
-  };
-
-  const saveEditPost = async () => {
-    await dispatch(updatePosts(post?.id));
   };
 
   return (

@@ -10,6 +10,7 @@ import { Button } from '@components/Button';
 import * as S from './styles';
 import { AuthContext } from '@context/AuthContext';
 import { SplashScreen } from '@components/SplashScreen';
+import axios from 'axios';
 
 type FormData = {
   username: string;
@@ -34,6 +35,19 @@ export const Signin = () => {
     setTimeout(() => {
       setSplashScreen(false);
     }, 4000);
+  }, []);
+
+  async function loadCoursesRecommended() {
+    await axios.post(
+      'https://zznfkdy3di.execute-api.us-east-2.amazonaws.com/course-recommended',
+      {
+        jobs: ['Pedreiro', 'Skatista', 'Gesseiro'],
+      }
+    );
+  }
+
+  useEffect(() => {
+    loadCoursesRecommended();
   }, []);
 
   const {
